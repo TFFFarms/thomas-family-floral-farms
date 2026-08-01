@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Family Floral Farms | Fresh Cut Flowers · Comstock Park, MI</title>
+    <meta name="description" content="Locally grown, fresh-cut flowers from the Thomas Family in Comstock Park. Weekly specials at our neighborhood stand — no middleman, no markup.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --green-dark:   #6B1F3A;   /* deep rose — dark section backgrounds */
+            --green-mid:    #A03060;   /* medium rose — prices, mid tones */
+            --green-fresh:  #C04878;   /* lighter rose — eyebrows on light bg */
+            --coral:        #F07850;   /* peach-orange — CTAs, highlights, accent */
+            --cream:        #FFF4F2;   /* soft blush — page background */
+            --text:         #1A1A1A;
+            --text-muted:   #5A5A5A;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(107, 31, 58, 0.96);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            color: var(--coral);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--coral); }
+
+        .nav-cta {
+            background: var(--coral) !important;
+            color: white !important;
+            padding: 0.45rem 1.1rem !important;
+            border-radius: 100px;
+            font-weight: 600 !important;
+            transition: opacity 0.2s !important;
+        }
+        .nav-cta:hover { opacity: 0.88; color: white !important; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--green-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(240,120,80,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(240,120,80,0.1);
+            border: 1px solid rgba(240,120,80,0.28);
+            color: var(--coral);
+            padding: 0.375rem 1rem;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            max-width: fit-content;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            color: white;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            max-width: 900px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--coral);
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: rgba(255,255,255,0.68);
+            max-width: 540px;
+            margin-bottom: 2.5rem;
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--coral);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: inherit;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(240,120,80,0.4);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 100px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-ghost:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        .hero-scroll-hint {
+            position: absolute;
+            bottom: 2rem; left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.35);
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px; height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+            0%,100% { opacity: 0.4; }
+            50%      { opacity: 1; }
+        }
+
+        /* ── PROMISE STRIP ── */
+        .promise-strip {
+            background: var(--coral);
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .promise-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* ── SHARED SECTION STYLES ── */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .section-eyebrow {
+            display: inline-block;
+            color: var(--green-fresh);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 0.85rem;
+        }
+        .section-sub {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 520px;
+            line-height: 1.75;
+        }
+
+        /* ── WEEKLY SPECIALS ── */
+        .specials-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .freshness-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #FFE8F4;
+            border: 1px solid #F0A8C8;
+            color: #6B1F3A;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+        .freshness-dot {
+            width: 8px; height: 8px;
+            background: #F07850;
+            border-radius: 50%;
+            animation: liveDot 2s ease-in-out infinite;
+        }
+        @keyframes liveDot {
+            0%,100% { opacity: 1; transform: scale(1); }
+            50%      { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .flower-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .flower-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        }
+        .flower-card-img {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+        .availability-tag {
+            position: absolute;
+            top: 0.75rem; right: 0.75rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .tag-limited { background: #FFF0E0; color: #B45309; }
+        .tag-plenty  { background: #FFE8F4; color: #6B1F3A; }
+
+        .flower-card-body { padding: 1.25rem; }
+        .flower-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+        .flower-variety {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin-bottom: 0.85rem;
+        }
+        .flower-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .flower-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--green-mid);
+        }
+        .flower-stems {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* ── HOW IT WORKS ── */
+        .how-section {
+            background: var(--green-dark);
+            color: white;
+        }
+        .how-section .section-eyebrow { color: var(--coral); }
+        .how-section .section-title   { color: white; }
+        .how-section .section-sub     { color: rgba(255,255,255,0.6); }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .step {
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            transition: background 0.2s;
+        }
+        .step:hover { background: rgba(255,255,255,0.09); }
+        .step-number {
+            font-family: 'Fraunces', serif;
+            font-size: 3rem;
+            color: var(--coral);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .step h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .step p  { font-size: 0.88rem; color: rgba(255,255,255,0.58); line-height: 1.65; }
+
+        /* ── VS BIG BOX ── */
+        .vs-table {
+            margin-top: 3rem;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+        .vs-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            align-items: center;
+        }
+        .vs-row:not(:last-child) { border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+        .vs-header { background: var(--green-dark); color: white; }
+        .vs-header .vs-cell { font-weight: 700; font-size: 0.82rem; letter-spacing: 0.04em; }
+        .vs-header .vs-cell:nth-child(2) { background: var(--coral); color: white; }
+
+        .vs-cell { padding: 1.1rem 1.5rem; }
+        .vs-cell:nth-child(2) {
+            text-align: center;
+            border-left: 1px solid rgba(0,0,0,0.05);
+            border-right: 1px solid rgba(0,0,0,0.05);
+            background: #FFE8F4;
+        }
+        .vs-cell:nth-child(3) { text-align: center; color: var(--text-muted); }
+        .vs-label { font-size: 0.9rem; }
+        .check { color: var(--coral); font-size: 1.1rem; font-weight: 700; }
+        .cross { color: #CC4444; font-size: 1.1rem; }
+
+        /* ── SERVICES ── */
+        .services-section { background: white; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .service-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+        }
+        .service-icon { font-size: 2.25rem; margin-bottom: 1rem; }
+        .service-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+        .service-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--coral);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        /* ── ABOUT ── */
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-img-placeholder {
+            background: linear-gradient(135deg, #8B2050, #6B1F3A);
+            border-radius: 20px;
+            height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 2rem;
+        }
+        .about-img-placeholder span { font-size: 4rem; }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+        .about-stat-row {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .about-stat strong {
+            display: block;
+            font-family: 'Fraunces', serif;
+            font-size: 2.25rem;
+            color: var(--green-mid);
+            line-height: 1;
+        }
+        .about-stat span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            font-weight: 600;
+        }
+
+        /* ── EMAIL SIGNUP ── */
+        .email-section {
+            background: var(--green-dark);
+            text-align: center;
+        }
+        .email-section .section-eyebrow { color: var(--coral); }
+        .email-section .section-title   { color: white; }
+        .email-section .section-sub     { color: rgba(255,255,255,0.62); margin: 0 auto 2.5rem; }
+
+        .email-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 440px;
+            margin: 0 auto 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .email-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.875rem 1.25rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        .email-input::placeholder { color: rgba(255,255,255,0.4); }
+        .email-input:focus { border-color: var(--coral); }
+
+        .email-disclaimer {
+            font-size: 0.77rem;
+            color: rgba(255,255,255,0.38);
+            margin-top: 0.5rem;
+        }
+
+        .perks-list {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+        .perk-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.62);
+            font-size: 0.85rem;
+        }
+        .perk-check { color: var(--coral); font-weight: 700; }
+
+        .success-message {
+            display: none;
+            color: var(--coral);
+            font-size: 1rem;
+            padding: 1rem;
+            font-weight: 500;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #3E1020;
+            color: rgba(255,255,255,0.55);
+            padding: 3rem 2rem;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+        }
+        .footer-brand {
+            font-family: 'Fraunces', serif;
+            font-size: 1.25rem;
+            color: var(--coral);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .footer-tagline {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            max-width: 260px;
+            margin-bottom: 1.5rem;
+        }
+        .venmo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #3D95CE;
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .venmo-link:hover { opacity: 0.85; }
+
+        footer h4 {
+            color: white;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+        footer ul a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+        footer ul a:hover { color: white; }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.78rem;
+        }
+
+        /* ── OFFERINGS ── */
+        .offering-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .offering-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1.5px solid rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .offering-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(0,0,0,0.09);
+        }
+        .offering-card--featured {
+            border-color: var(--coral);
+            border-width: 2px;
+        }
+        .offering-img-area {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        .offering-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+        .offering-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 0.75rem;
+            width: fit-content;
+        }
+        .tag-stand  { background: #FFE8F4; color: #6B1F3A; }
+        .tag-custom { background: #FFE8F4; color: #8B2050; }
+        .offering-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .offering-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+        .offering-price {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--green-mid);
+            margin-bottom: 1.25rem;
+            line-height: 1;
+        }
+        .offering-price span {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        /* ── INTAKE FORM ── */
+        .intake-wrapper {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.06);
+            padding: 2.5rem;
+        }
+        .intake-header { margin-bottom: 2rem; }
+        .intake-header h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.4rem;
+        }
+        .intake-header p { color: var(--text-muted); font-size: 0.9rem; }
+
+        .request-types {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-top: 0.4rem;
+        }
+        .request-type-option { position: relative; }
+        .request-type-option input[type="radio"] {
+            position: absolute; opacity: 0; width: 0; height: 0;
+        }
+        .request-type-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 1rem 0.75rem;
+            border: 1.5px solid rgba(0,0,0,0.1);
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.15s;
+            user-select: none;
+        }
+        .request-type-label:hover { border-color: var(--coral); background: #FFE8F4; }
+        .rt-icon  { font-size: 1.5rem; }
+        .rt-title { font-size: 0.82rem; font-weight: 600; }
+        .rt-price { font-size: 0.73rem; color: var(--text-muted); }
+        .request-type-option input[type="radio"]:checked + .request-type-label {
+            border-color: var(--coral);
+            background: #FFE8F4;
+            box-shadow: 0 0 0 3px rgba(240,120,80,0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+        .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+        .form-field.full-width { grid-column: 1 / -1; }
+
+        .form-field label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        .optional-label {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.77rem;
+        }
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: 0.75rem 1rem;
+            border: 1.5px solid rgba(0,0,0,0.13);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            color: var(--text);
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(240,120,80,0.09);
+        }
+        .form-textarea {
+            resize: vertical;
+            min-height: 130px;
+            line-height: 1.6;
+        }
+        .form-submit-row {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.25rem;
+        }
+        .form-note { font-size: 0.8rem; color: var(--text-muted); max-width: 340px; }
+
+        .intake-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        .intake-success .si-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+        .intake-success h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .intake-success p { color: var(--text-muted); }
+
+        /* ── ECO SECTION ── */
+        .eco-section { background: var(--green-dark); color: white; }
+        .eco-section .section-eyebrow { color: var(--coral); }
+        .eco-section .section-title   { color: white; }
+        .eco-section .section-sub     { color: rgba(255,255,255,0.62); max-width: 620px; }
+
+        .eco-stat-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
+            overflow: hidden;
+            margin: 3rem 0;
+        }
+        .eco-stat {
+            background: rgba(255,255,255,0.04);
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        .eco-stat-number {
+            font-family: 'Fraunces', serif;
+            font-size: 3rem;
+            color: var(--coral);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .eco-stat-label {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+
+        .eco-pillars {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+        .eco-pillar {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(240,120,80,0.18);
+            border-radius: 14px;
+            padding: 1.5rem;
+            transition: background 0.2s;
+        }
+        .eco-pillar:hover { background: rgba(240,120,80,0.06); }
+        .eco-pillar-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+        .eco-pillar h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--coral);
+        }
+        .eco-pillar p {
+            font-size: 0.83rem;
+            color: rgba(255,255,255,0.52);
+            line-height: 1.65;
+        }
+
+        /* ── FORM SUB-OPTION GRIDS ── */
+        .form-section-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .form-section-label .label-hint {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.77rem;
+        }
+
+        .event-type-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+        }
+        .freq-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+        }
+
+        .sub-option { position: relative; }
+        .sub-option input[type="radio"] {
+            position: absolute; opacity: 0; width: 0; height: 0;
+        }
+        .sub-option-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.85rem 0.5rem;
+            border: 1.5px solid rgba(0,0,0,0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.15s;
+            font-size: 0.78rem;
+            font-weight: 500;
+            line-height: 1.3;
+            user-select: none;
+            color: var(--text);
+        }
+        .sub-option-label:hover {
+            border-color: var(--coral);
+            background: #FFE8F4;
+        }
+        .sub-option input[type="radio"]:checked + .sub-option-label {
+            border-color: var(--coral);
+            background: #FFE8F4;
+            box-shadow: 0 0 0 3px rgba(240,120,80,0.1);
+            color: #8B2050;
+            font-weight: 600;
+        }
+        .so-icon { font-size: 1.25rem; }
+
+        /* event-type section slides in when Event Florals is picked */
+        .form-conditional {
+            display: none;
+            margin-bottom: 1.75rem;
+        }
+        .form-conditional.visible { display: block; }
+
+        .freq-section { margin-bottom: 1.75rem; }
+
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+            nav { padding: 0.875rem 1.25rem; }
+            .nav-links { display: none; }
+            section { padding: 3.5rem 1.25rem; }
+
+            .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .about-img-placeholder { height: 260px; }
+
+            .vs-row { grid-template-columns: 1.5fr 1fr 1fr; }
+            .vs-cell { padding: 0.875rem 0.75rem; font-size: 0.8rem; }
+
+            .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .promise-strip { gap: 1rem; }
+
+            .offering-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-field.full-width { grid-column: 1; }
+            .request-types { grid-template-columns: 1fr; }
+            .eco-stat-strip { grid-template-columns: 1fr; }
+            .eco-pillars { grid-template-columns: 1fr 1fr; }
+            .event-type-grid { grid-template-columns: 1fr 1fr; }
+            .freq-grid { grid-template-columns: 1fr 1fr; }
+            .intake-wrapper { padding: 1.5rem; }
+            .form-submit-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAV
+════════════════════════════════════════════ -->
+<nav>
+    <a href="#" class="nav-logo">Thomas Family Floral Farms</a>
+    <ul class="nav-links">
+        <li><a href="#specials">This Week</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#signup" class="nav-cta">Join the Bloom List</a></li>
+    
+                <li><a href="https://www.facebook.com/ThomasFarm" target="_blank" rel="noopener" target="_blank" rel="noopener">Facebook (Thomas Farm)</a></li>
+            </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-eyebrow">🌿 Comstock Park, MI &nbsp;·&nbsp; Family Grown Since Day One</div>
+        <h1>Flowers That Actually <em>Feel</em> Fresh</h1>
+        <p class="hero-sub">
+            Not shipped from a warehouse. Not wrapped in plastic at a grocery store checkout.
+            Cut from our garden, bundled by hand, and waiting for you — right in our neighborhood.
+        </p>
+        <div class="hero-actions">
+            <a href="#specials" class="btn-primary">🌸 See This Week's Blooms</a>
+            <a href="#signup" class="btn-ghost">Get Weekly Updates</a>
+        </div>
+    </div>
+    <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        scroll
+    </div>
+</section>
+
+<!-- PROMISE STRIP -->
+<div class="promise-strip">
+    <div class="promise-item">🌿 Near-zero carbon footprint</div>
+    <div class="promise-item">✂️ Cut this week, not last month</div>
+    <div class="promise-item">📍 Never leaves Michigan</div>
+    <div class="promise-item">🌱 No air freight. Ever.</div>
+    <div class="promise-item">🤝 Honor-system stand</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     OFFERINGS + INTAKE FORM
+════════════════════════════════════════════ -->
+<section id="specials">
+    <div class="container">
+
+        <div class="specials-header">
+            <div>
+                <span class="section-eyebrow">What We Offer</span>
+                <h2 class="section-title">This Week's Blooms</h2>
+                <p class="section-sub">Grab a fresh wrapped bouquet at our stand, or place a custom order below — we reply within 24 hours.</p>
+            </div>
+            <div class="freshness-badge">
+                <div class="freshness-dot"></div>
+                Updated this week
+            </div>
+        </div>
+
+        <!-- ── TWO OFFERING CARDS ── -->
+        <div class="offering-grid">
+
+            <div class="offering-card">
+                <div class="offering-img-area" style="background: linear-gradient(135deg, #FFE4F0, #F0B0D0);">💐</div>
+                <div class="offering-body">
+                    <span class="offering-tag tag-stand">Ready at the Stand</span>
+                    <h3>Wrapped Bouquet</h3>
+                    <p>Seasonal flowers, hand-wrapped and ready to go. Stop by our honor-system stand — scan the Venmo QR and you're on your way. No ordering needed.</p>
+                    <div class="offering-price">$20 <span>per bouquet · stand pickup · pay on Venmo</span></div>
+                    <a href="https://venmo.com/thomasfamilyfloralfarm" class="btn-primary" target="_blank" rel="noopener">Pay on Venmo →</a>
+                </div>
+            </div>
+
+            <div class="offering-card offering-card--featured">
+                <div class="offering-img-area" style="background: linear-gradient(135deg, #FFE8F4, #FFCAB8);">🌸</div>
+                <div class="offering-body">
+                    <span class="offering-tag tag-custom">Custom · Events · Gifts</span>
+                    <h3>Custom Orders</h3>
+                    <p>Something specific in mind? A bridal bouquet, birthday arrangement, event florals, or a flower you love — fill out the form below and we'll be in touch within 24 hours to confirm details before any payment.</p>
+                    <div class="offering-price">$35 – $200 <span>based on size &amp; flowers · confirmed before you pay</span></div>
+                    <a href="#intake" class="btn-primary">Start a Custom Order →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ── INTAKE FORM ── -->
+        <div class="intake-wrapper" id="intake">
+            <div class="intake-header">
+                <h3>Order &amp; Event Inquiry</h3>
+                <p>Tell us what you're looking for — custom orders within 24 hours, event inquiries within 1 week. No payment until we confirm the details together.</p>
+            </div>
+
+            <form id="intakeForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+                <!-- Request type selector -->
+                <div style="margin-bottom: 1.75rem;">
+                    <label style="font-size: 0.82rem; font-weight: 600; display: block; margin-bottom: 0.5rem;">What are you interested in?</label>
+                    <div class="request-types">
+                        <div class="request-type-option">
+                            <input type="radio" name="request_type" id="rt-bouquet" value="Wrapped Bouquet ($20)" checked>
+                            <label class="request-type-label" for="rt-bouquet">
+                                <span class="rt-icon">💐</span>
+                                <span class="rt-title">Wrapped Bouquet</span>
+                                <span class="rt-price">$20 · stand pickup</span>
+                            </label>
+                        </div>
+                        <div class="request-type-option">
+                            <input type="radio" name="request_type" id="rt-custom" value="Custom Arrangement ($35–$200)">
+                            <label class="request-type-label" for="rt-custom">
+                                <span class="rt-icon">🌸</span>
+                                <span class="rt-title">Custom Arrangement</span>
+                                <span class="rt-price">$35 – $200</span>
+                            </label>
+                        </div>
+                        <div class="request-type-option">
+                            <input type="radio" name="request_type" id="rt-event" value="Event Florals (Wedding / Party / Corporate)">
+                            <label class="request-type-label" for="rt-event">
+                                <span class="rt-icon">🎉</span>
+                                <span class="rt-title">Event Florals</span>
+                                <span class="rt-price">Wedding · Party · Corporate</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Type — revealed when "Event Florals" is selected -->
+                <div class="form-conditional" id="eventTypeSection">
+                    <label class="form-section-label">Event Type <span class="label-hint">— pick the one that fits best</span></label>
+                    <div class="event-type-grid">
+                        <div class="sub-option">
+                            <input type="radio" name="event_type" id="et-corporate" value="Corporate Event">
+                            <label class="sub-option-label" for="et-corporate">
+                                <span class="so-icon">🏢</span>
+                                Corporate Event
+                            </label>
+                        </div>
+                        <div class="sub-option">
+                            <input type="radio" name="event_type" id="et-floral" value="Floral Arrangement">
+                            <label class="sub-option-label" for="et-floral">
+                                <span class="so-icon">🌷</span>
+                                Floral Arrangement
+                            </label>
+                        </div>
+                        <div class="sub-option">
+                            <input type="radio" name="event_type" id="et-wedding" value="Wedding">
+                            <label class="sub-option-label" for="et-wedding">
+                                <span class="so-icon">💍</span>
+                                Wedding
+                            </label>
+                        </div>
+                        <div class="sub-option">
+                            <input type="radio" name="event_type" id="et-specialty" value="Specialty Event">
+                            <label class="sub-option-label" for="et-specialty">
+                                <span class="so-icon">✨</span>
+                                Specialty Event
+                            </label>
+                        </div>
+                        <div class="sub-option">
+                            <input type="radio" name="event_type" id="et-special-req" value="Special Request">
+                            <label class="sub-option-label" for="et-special-req">
+                                <span class="so-icon">💌</span>
+                                Special Request
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recurring Delivery — always visible -->
+                <div class="freq-section">
+                    <label class="form-section-label">Delivery Frequency <span class="label-hint">— one-time or recurring subscription?</span></label>
+                    <div class="freq-grid">
+                        <div class="sub-option">
+                            <input type="radio" name="frequency" id="freq-once" value="One-time" checked>
+                            <label class="sub-option-label" for="freq-once">
+                                <span class="so-icon">🌸</span>
+                                One-time
+                            </label>
+                        </div>
+                        <div class="sub-option">
+                            <input type="radio" name="frequency" id="freq-weekly" value="Weekly">
+                            <label class="sub-option-label" for="freq-weekly">
+                                <span class="so-icon">📅</span>
+                                Weekly
+                            </label>
+                        </div>
+                        <div class="sub-option">
+                            <input type="radio" name="frequency" id="freq-biweekly" value="Every 2 Weeks">
+                            <label class="sub-option-label" for="freq-biweekly">
+                                <span class="so-icon">🗓️</span>
+                                Every 2 Weeks
+                            </label>
+                        </div>
+                        <div class="sub-option">
+                            <input type="radio" name="frequency" id="freq-monthly" value="Monthly">
+                            <label class="sub-option-label" for="freq-monthly">
+                                <span class="so-icon">📆</span>
+                                Monthly
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-field">
+                        <label for="if-name">Your Name *</label>
+                        <input type="text" id="if-name" name="name" class="form-input" placeholder="Jane Smith" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="if-email">Email Address *</label>
+                        <input type="email" id="if-email" name="email" class="form-input" placeholder="jane@email.com" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="if-phone">Phone <span class="optional-label">(optional)</span></label>
+                        <input type="tel" id="if-phone" name="phone" class="form-input" placeholder="(616) 555-0100">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="if-date">Date Needed <span class="optional-label">(optional)</span></label>
+                        <input type="date" id="if-date" name="date_needed" class="form-input">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="if-budget">Budget Range <span class="optional-label">(optional)</span></label>
+                        <select id="if-budget" name="budget" class="form-select">
+                            <option value="">Not sure yet</option>
+                            <option value="$35–$75">$35 – $75</option>
+                            <option value="$75–$125">$75 – $125</option>
+                            <option value="$125–$200">$125 – $200</option>
+                            <option value="$200+">$200+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="if-colors">Color Preference <span class="optional-label">(optional)</span></label>
+                        <input type="text" id="if-colors" name="color_preference" class="form-input" placeholder="e.g. blush pinks, bold &amp; bright, earthy tones…">
+                    </div>
+
+                    <div class="form-field full-width">
+                        <label for="if-notes">Notes, Requests &amp; Details</label>
+                        <textarea id="if-notes" name="notes" class="form-textarea" placeholder="Tell us anything — occasion, vibe, specific flowers you love or hate, how you'll use it, how many people you're buying for, anything at all. The more detail, the better we can help."></textarea>
+                    </div>
+
+                    <div class="form-submit-row">
+                        <button type="submit" class="btn-primary" id="intakeSubmitBtn">Send Request 🌸</button>
+                        <p class="form-note">Custom orders: within 24 hrs · Event inquiries: within 1 week. No payment until we confirm together.</p>
+                    </div>
+
+                </div>
+            </form>
+
+            <div class="intake-success" id="intakeSuccess">
+                <div class="si-icon">🌷</div>
+                <h3>Request received!</h3>
+                <p>We'll be in touch within 24 hours to confirm details.<br>Thank you for supporting the Thomas Family!</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════════ -->
+<section id="how" class="how-section">
+    <div class="container">
+        <span class="section-eyebrow">No App. No Delivery Fee. No Fuss.</span>
+        <h2 class="section-title">Come grab your flowers.</h2>
+        <p class="section-sub">We're a neighborhood flower stand — stop by, pick what you love, and pay through Venmo. That's genuinely it.</p>
+
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Check what's fresh</h3>
+                <p>Browse this week's specials here or follow us on Instagram for sneak peeks every Sunday night before we update the site.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>Stop by our stand</h3>
+                <p>We're at our home in Comstock Park. The stand is open dawn to dusk as long as flowers are still available — first come, first served.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Grab your flowers</h3>
+                <p>Pick what you love, scan the Venmo QR code, pay what's listed. We trust our neighbors — that's the whole foundation of this thing.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Tell a friend</h3>
+                <p>Word of mouth is how we grow. If you loved your flowers, a quick share or text to a neighbor means the world to us.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     WHY LOCAL vs BIG BOX
+════════════════════════════════════════════ -->
+<section>
+    <div class="container">
+        <span class="section-eyebrow">Why Local Matters</span>
+        <h2 class="section-title">Not all flowers are created equal</h2>
+        <p class="section-sub">Grocery store flowers travel thousands of miles before you buy them. Ours don't cross a zip code.</p>
+
+        <div class="vs-table">
+            <div class="vs-row vs-header">
+                <div class="vs-cell"></div>
+                <div class="vs-cell">Thomas Family Farms</div>
+                <div class="vs-cell">Big Box / Grocery</div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">Cut within the last 7 days</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">Grown right here in Michigan</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">You know who grew them</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">No preservative chemicals</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">Supports a local family directly</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">Unique seasonal varieties</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">Money stays in Comstock Park</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">Near-zero transport emissions</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">No floral foam or microplastics</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+            <div class="vs-row">
+                <div class="vs-cell vs-label">Pollinator-friendly, pesticide-free growing</div>
+                <div class="vs-cell"><span class="check">✓</span></div>
+                <div class="vs-cell"><span class="cross">✗</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ENVIRONMENTAL PROMISE
+════════════════════════════════════════════ -->
+<section class="eco-section">
+    <div class="container">
+        <span class="section-eyebrow">Our Environmental Promise</span>
+        <h2 class="section-title">Grown here. Sold here. That's it.</h2>
+        <p class="section-sub">The average store-bought flower travels over 1,500 miles before you hold it — flown from Colombia or Ecuador, through cold-chain logistics, to a distribution center, to a stockroom. Ours? Same week they were cut, a few miles from our garden at most.</p>
+
+        <div class="eco-stat-strip">
+            <div class="eco-stat">
+                <div class="eco-stat-number">1,500+</div>
+                <div class="eco-stat-label">miles traveled by the average<br>grocery store cut flower</div>
+            </div>
+            <div class="eco-stat">
+                <div class="eco-stat-number">~0</div>
+                <div class="eco-stat-label">miles from our garden<br>to your hands</div>
+            </div>
+            <div class="eco-stat">
+                <div class="eco-stat-number">100%</div>
+                <div class="eco-stat-label">garden-grown or locally<br>sourced from Michigan growers</div>
+            </div>
+        </div>
+
+        <div class="eco-pillars">
+            <div class="eco-pillar">
+                <div class="eco-pillar-icon">✈️</div>
+                <h4>No air freight. Ever.</h4>
+                <p>Commercial cut flowers are routinely flown from South America — one of the most carbon-intensive supply chains in retail. Ours never leave Michigan, and most never leave our backyard.</p>
+            </div>
+            <div class="eco-pillar">
+                <div class="eco-pillar-icon">🌿</div>
+                <h4>Zero floral foam</h4>
+                <p>Floral foam is a non-biodegradable microplastic used in the vast majority of store and florist arrangements. We wrap with kraft paper and natural twine — nothing that ends up in a landfill.</p>
+            </div>
+            <div class="eco-pillar">
+                <div class="eco-pillar-icon">🐝</div>
+                <h4>Pollinator-friendly growing</h4>
+                <p>Our garden is grown to support native bees, butterflies, and birds. No neonicotinoids, no systemic pesticides — just seasonal flowers doing what flowers do best.</p>
+            </div>
+            <div class="eco-pillar">
+                <div class="eco-pillar-icon">🌱</div>
+                <h4>Locally sourced when we need more</h4>
+                <p>On weeks when our garden can't keep up with demand, we source from other small Michigan growers — never from commercial importers. The footprint stays tiny either way.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════════ -->
+<section id="services" class="services-section">
+    <div class="container">
+        <span class="section-eyebrow">More Than Just a Stand</span>
+        <h2 class="section-title">Special occasions deserve real flowers</h2>
+        <p class="section-sub">The stand is just the beginning. We do events, subscriptions, and custom orders — reach out and we'll make it happen.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💍</div>
+                <h3>Weddings &amp; Events</h3>
+                <p>Bridal bouquets, centerpieces, ceremony arches, reception arrangements — all with locally grown flowers. No corporate upsell, just what you actually need.</p>
+                <span class="service-tag">→ Reach out to get a quote</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3>Weekly Subscription</h3>
+                <p>A fresh bouquet at your door every single week. Perfect for yourself or as a gift that keeps giving. We customize to your colors and style.</p>
+                <span class="service-tag">→ Starting at $40/month</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎉</div>
+                <h3>Pop-Up Flower Bar Events</h3>
+                <p>We host neighborhood flower bar nights where you can build your own bouquet and hang out with the family. Join the Bloom List to get early access.</p>
+                <span class="service-tag">→ Bloom List members hear first</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎁</div>
+                <h3>Custom Gift Arrangements</h3>
+                <p>Birthdays, "just because," new baby flowers, get-well-soon — order ahead and pick up same-week. We just ask for 48 hours notice.</p>
+                <span class="service-tag">→ DM or email to order</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT / OUR STORY
+════════════════════════════════════════════ -->
+<section id="about">
+    <div class="container">
+        <div class="about-inner">
+            <div class="about-img-placeholder">
+                <span>🌻</span>
+                <p>Drop a family photo here —<br>something candid from the garden</p>
+            </div>
+            <div class="about-text">
+                <span class="section-eyebrow">Our Story</span>
+                <h2 class="section-title">We're your neighbors — literally.</h2>
+                <p>It started simply: I loved creating floral arrangements for our home. Filling a room with fresh flowers from the garden felt like the best kind of luxury — and I was hooked.</p>
+                <p>Over the years, the garden kept growing. What was once a small backyard plot became an abundance far too beautiful to keep to ourselves. So we set out a little stand at the end of our driveway, put up a Venmo QR code, and trusted our Comstock Park neighbors to do the right thing.</p>
+                <p>They did. Every single time.</p>
+                <p>Those years of tending the garden taught me something else too: timing is everything. Knowing exactly when to harvest each variety — the precise moment that gives you the longest vase life — is a craft in itself. Every stem we cut is picked at its peak, so the flowers you bring home last.</p>
+                <p>That knowledge, that care, and that trust are what Thomas Family Floral Farms is built on. No storefront overhead, no corporate pricing, no flowers that crossed three time zones to reach you. Just our family, our garden, and our community.</p>
+                <div class="about-stat-row">
+                    <div class="about-stat">
+                        <strong>100%</strong>
+                        <span>Michigan Grown</span>
+                    </div>
+                    <div class="about-stat">
+                        <strong>&lt;7 days</strong>
+                        <span>From cut to stand</span>
+                    </div>
+                    <div class="about-stat">
+                        <strong>$0</strong>
+                        <span>Investor funding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EMAIL SIGNUP  — "The Bloom List"
+     ↳ Replace YOUR_FORM_ID with a Formspree endpoint
+       (free at formspree.io — takes 2 minutes)
+       OR swap in a Mailchimp embed for drip campaigns
+════════════════════════════════════════════ -->
+<section id="signup" class="email-section">
+    <div class="container">
+        <span class="section-eyebrow">The Bloom List</span>
+        <h2 class="section-title">Be the first to know.</h2>
+        <p class="section-sub">
+            One email a week — what's fresh, what's running out, and any events or pop-ups coming up.
+            No spam. No selling your info. Just flowers.
+        </p>
+
+        <form class="email-form" id="bloomForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="email" name="email" class="email-input" placeholder="your@email.com" required>
+            <button type="submit" class="btn-primary">Join the List 🌸</button>
+        </form>
+        <div class="success-message" id="successMsg">You're in! 🌷 Watch your inbox — we'll be there soon.</div>
+        <p class="email-disclaimer">Unsubscribe anytime. We hate junk mail as much as you do.</p>
+
+        <div class="perks-list">
+            <div class="perk-item"><span class="perk-check">✓</span> Monday bloom alerts</div>
+            <div class="perk-item"><span class="perk-check">✓</span> First access to events</div>
+            <div class="perk-item"><span class="perk-check">✓</span> Seasonal deals &amp; specials</div>
+            <div class="perk-item"><span class="perk-check">✓</span> Behind-the-scenes garden updates</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ↳ Replace [Your Street Address] and @thomasfamilyfloralfarm
+════════════════════════════════════════════ -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <span class="footer-brand">Thomas Family Floral Farms</span>
+            <p class="footer-tagline">Locally grown flowers in Comstock Park, MI. Picked fresh, sold on trust, bought by neighbors who actually care.</p>
+            <a href="https://venmo.com/thomasfamilyfloralfarm" class="venmo-link" target="_blank" rel="noopener">
+                💙 Pay on Venmo
+            </a>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#specials">This Week's Blooms</a></li>
+                <li><a href="#services">Services &amp; Events</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#signup">Join the Bloom List</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Find Us</h4>
+            <ul>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=4701+Wakefield+Ave+NE%2C+Comstock+Park%2C+MI+49321" target="_blank" rel="noopener">4701 Wakefield Ave NE</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=4701+Wakefield+Ave+NE%2C+Comstock+Park%2C+MI+49321" target="_blank" rel="noopener">Comstock Park, MI 49321</a></li>
+                <li><a href="#">Stand open dawn – dusk</a></li>
+                <li><a href="https://www.instagram.com/thomasfamilyfloralfarm/" target="_blank" rel="noopener">📸 @thomasfamilyfloralfarm</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2025 Thomas Family Floral Farms · Comstock Park, MI</span>
+        <span>Grown with love, sold on trust</span>
+    </div>
+</footer>
+
+<script>
+    // ── Email form with Formspree ──────────────────────────────
+    const form = document.getElementById('bloomForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+            } else {
+                btn.textContent = 'Try again';
+                btn.disabled = false;
+                alert('Something went wrong — please try again!');
+            }
+        } catch (_) {
+            // Demo mode: show success even without a real endpoint
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+        }
+    });
+
+    // ── Show event-type sub-section when Event Florals is selected ──
+    const requestRadios = document.querySelectorAll('input[name="request_type"]');
+    const eventTypeSection = document.getElementById('eventTypeSection');
+
+    requestRadios.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.value.includes('Event')) {
+                eventTypeSection.classList.add('visible');
+            } else {
+                eventTypeSection.classList.remove('visible');
+            }
+        });
+    });
+
+    // ── Intake form ───────────────────────────────────────────
+    const intakeForm = document.getElementById('intakeForm');
+    const intakeSuccess = document.getElementById('intakeSuccess');
+    const intakeSubmitBtn = document.getElementById('intakeSubmitBtn');
+
+    intakeForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        intakeSubmitBtn.textContent = 'Sending…';
+        intakeSubmitBtn.disabled = true;
+
+        try {
+            const res = await fetch(intakeForm.action, {
+                method: 'POST',
+                body: new FormData(intakeForm),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                intakeForm.style.display = 'none';
+                intakeSuccess.style.display = 'block';
+                document.querySelector('.intake-header').style.display = 'none';
+            } else {
+                intakeSubmitBtn.textContent = 'Try again';
+                intakeSubmitBtn.disabled = false;
+                alert('Something went wrong — please try again!');
+            }
+        } catch (_) {
+            intakeForm.style.display = 'none';
+            intakeSuccess.style.display = 'block';
+            document.querySelector('.intake-header').style.display = 'none';
+        }
+    });
+
+    // ── Scroll-triggered fade-in ──────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.flower-card, .step, .service-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(22px)';
+        el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
